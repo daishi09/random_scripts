@@ -51,3 +51,6 @@ docker exec -it fdd250a99297 bash
 
 #copy file from container to host
 docker cp fdd250a99297:/tmp/mathews.csv home/chicken/
+
+#set prereq for challenges
+docker exec -i ctfd_db_1 mysql -uroot -pctfd -e "USE ctfd;UPDATE challenges SET requirements='{\"prerequisites\": [1]}' WHERE id BETWEEN 10 AND 20;"
